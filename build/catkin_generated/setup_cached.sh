@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/owr01/practice/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/owr01/practice/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/owr01/practice/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/owr01/practice/src:$ROS_PACKAGE_PATH"
