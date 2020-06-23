@@ -1,2 +1,2 @@
-
+hello:test
 -DCATKIN_DEVEL_PREFIX=/home/owr01/practice/devel -DCMAKE_INSTALL_PREFIX=/home/owr01/practice/install -G Unix Makefiles
