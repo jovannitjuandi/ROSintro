@@ -38,6 +38,8 @@
 /home/owr01/practice/build/hello/CMakeFiles/install/strip.dir
 /home/owr01/practice/build/hello/CMakeFiles/install/local.dir
 /home/owr01/practice/build/hello/CMakeFiles/rebuild_cache.dir
+/home/owr01/practice/build/hello/CMakeFiles/test.dir
+/home/owr01/practice/build/hello/CMakeFiles/listener.dir
 /home/owr01/practice/build/hello/CMakeFiles/list_install_components.dir
 /home/owr01/practice/build/hello/CMakeFiles/roscpp_generate_messages_py.dir
 /home/owr01/practice/build/hello/CMakeFiles/roscpp_generate_messages_eus.dir
@@ -46,6 +48,7 @@
 /home/owr01/practice/build/hello/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
 /home/owr01/practice/build/hello/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/owr01/practice/build/hello/CMakeFiles/roscpp_generate_messages_cpp.dir
+/home/owr01/practice/build/hello/CMakeFiles/talker.dir
 /home/owr01/practice/build/hello/CMakeFiles/install.dir
 /home/owr01/practice/build/hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
 /home/owr01/practice/build/hello/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
@@ -56,4 +59,10 @@
 /home/owr01/practice/build/hello/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/owr01/practice/build/hello/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/owr01/practice/build/hello/CMakeFiles/std_msgs_generate_messages_py.dir
-/home/owr01/practice/build/hello/CMakeFiles/test.dir
+/home/owr01/practice/build/test/CMakeFiles/install/strip.dir
+/home/owr01/practice/build/test/CMakeFiles/edit_cache.dir
+/home/owr01/practice/build/test/CMakeFiles/list_install_components.dir
+/home/owr01/practice/build/test/CMakeFiles/test.dir
+/home/owr01/practice/build/test/CMakeFiles/install/local.dir
+/home/owr01/practice/build/test/CMakeFiles/rebuild_cache.dir
+/home/owr01/practice/build/test/CMakeFiles/install.dir

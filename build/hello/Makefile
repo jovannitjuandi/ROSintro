@@ -91,6 +91,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -124,17 +135,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/owr01/practice/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/owr01/practice/build/CMakeFiles /home/owr01/practice/build/hello/CMakeFiles/progress.marks
@@ -166,6 +166,21 @@ preinstall/fast:
 depend:
 	cd /home/owr01/practice/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+hello/CMakeFiles/listener.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/listener.dir/rule
+.PHONY : hello/CMakeFiles/listener.dir/rule
+
+# Convenience name for target.
+listener: hello/CMakeFiles/listener.dir/rule
+
+.PHONY : listener
+
+# fast build rule for target.
+listener/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/listener.dir/build.make hello/CMakeFiles/listener.dir/build
+.PHONY : listener/fast
 
 # Convenience name for target.
 hello/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -256,6 +271,21 @@ roscpp_generate_messages_cpp: hello/CMakeFiles/roscpp_generate_messages_cpp.dir/
 roscpp_generate_messages_cpp/fast:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make hello/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+hello/CMakeFiles/talker.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/talker.dir/rule
+.PHONY : hello/CMakeFiles/talker.dir/rule
+
+# Convenience name for target.
+talker: hello/CMakeFiles/talker.dir/rule
+
+.PHONY : talker
+
+# fast build rule for target.
+talker/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/talker.dir/build.make hello/CMakeFiles/talker.dir/build
+.PHONY : talker/fast
 
 # Convenience name for target.
 hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
@@ -392,6 +422,60 @@ std_msgs_generate_messages_py/fast:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/std_msgs_generate_messages_py.dir/build.make hello/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/listener.o: src/listener.cpp.o
+
+.PHONY : src/listener.o
+
+# target to build an object file
+src/listener.cpp.o:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/listener.dir/build.make hello/CMakeFiles/listener.dir/src/listener.cpp.o
+.PHONY : src/listener.cpp.o
+
+src/listener.i: src/listener.cpp.i
+
+.PHONY : src/listener.i
+
+# target to preprocess a source file
+src/listener.cpp.i:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/listener.dir/build.make hello/CMakeFiles/listener.dir/src/listener.cpp.i
+.PHONY : src/listener.cpp.i
+
+src/listener.s: src/listener.cpp.s
+
+.PHONY : src/listener.s
+
+# target to generate assembly for a file
+src/listener.cpp.s:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/listener.dir/build.make hello/CMakeFiles/listener.dir/src/listener.cpp.s
+.PHONY : src/listener.cpp.s
+
+src/talker.o: src/talker.cpp.o
+
+.PHONY : src/talker.o
+
+# target to build an object file
+src/talker.cpp.o:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/talker.dir/build.make hello/CMakeFiles/talker.dir/src/talker.cpp.o
+.PHONY : src/talker.cpp.o
+
+src/talker.i: src/talker.cpp.i
+
+.PHONY : src/talker.i
+
+# target to preprocess a source file
+src/talker.cpp.i:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/talker.dir/build.make hello/CMakeFiles/talker.dir/src/talker.cpp.i
+.PHONY : src/talker.cpp.i
+
+src/talker.s: src/talker.cpp.s
+
+.PHONY : src/talker.s
+
+# target to generate assembly for a file
+src/talker.cpp.s:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/talker.dir/build.make hello/CMakeFiles/talker.dir/src/talker.cpp.s
+.PHONY : src/talker.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -401,6 +485,8 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... listener"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
@@ -409,6 +495,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... talker"
 	@echo "... install"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -419,7 +506,12 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... test"
+	@echo "... src/listener.o"
+	@echo "... src/listener.i"
+	@echo "... src/listener.s"
+	@echo "... src/talker.o"
+	@echo "... src/talker.i"
+	@echo "... src/talker.s"
 .PHONY : help
 
 
