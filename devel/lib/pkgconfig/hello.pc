@@ -3,6 +3,6 @@ prefix=/home/owr01/practice/devel
 Name: hello
 Description: Description of hello
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/owr01/practice/devel/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: message_runtime roscpp rospy std_msgs geometry_msgs
