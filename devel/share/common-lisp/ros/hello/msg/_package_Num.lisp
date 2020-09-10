@@ -3,6 +3,4 @@
           FIRST_NAME
           COORDINATE-VAL
           COORDINATE
-          NUM-VAL
-          NUM
 ))

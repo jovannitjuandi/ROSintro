@@ -1,0 +1,8 @@
+prefix=/home/owr01/practice/devel
+
+Name: joy_listener
+Description: Description of joy_listener
+Version: 0.0.0
+Cflags: -I/home/owr01/practice/src/joy_listener/include
+Libs: -L${prefix}/lib -ljoy_listener
+Requires: 

@@ -90,17 +90,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -122,6 +111,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -256,21 +256,6 @@ hello_generate_messages_cpp: hello/CMakeFiles/hello_generate_messages_cpp.dir/ru
 hello_generate_messages_cpp/fast:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/hello_generate_messages_cpp.dir/build.make hello/CMakeFiles/hello_generate_messages_cpp.dir/build
 .PHONY : hello_generate_messages_cpp/fast
-
-# Convenience name for target.
-hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 hello/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -558,6 +543,36 @@ listener/fast:
 .PHONY : listener/fast
 
 # Convenience name for target.
+hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make hello/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+hello/CMakeFiles/Num_Sub.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/Num_Sub.dir/rule
+.PHONY : hello/CMakeFiles/Num_Sub.dir/rule
+
+# Convenience name for target.
+Num_Sub: hello/CMakeFiles/Num_Sub.dir/rule
+
+.PHONY : Num_Sub
+
+# fast build rule for target.
+Num_Sub/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Sub.dir/build.make hello/CMakeFiles/Num_Sub.dir/build
+.PHONY : Num_Sub/fast
+
+# Convenience name for target.
 hello/CMakeFiles/hello_gencpp.dir/rule:
 	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/hello_gencpp.dir/rule
 .PHONY : hello/CMakeFiles/hello_gencpp.dir/rule
@@ -677,6 +692,21 @@ hello_genpy/fast:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/hello_genpy.dir/build.make hello/CMakeFiles/hello_genpy.dir/build
 .PHONY : hello_genpy/fast
 
+# Convenience name for target.
+hello/CMakeFiles/Num_Pub.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/Num_Pub.dir/rule
+.PHONY : hello/CMakeFiles/Num_Pub.dir/rule
+
+# Convenience name for target.
+Num_Pub: hello/CMakeFiles/Num_Pub.dir/rule
+
+.PHONY : Num_Pub
+
+# fast build rule for target.
+Num_Pub/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Pub.dir/build.make hello/CMakeFiles/Num_Pub.dir/build
+.PHONY : Num_Pub/fast
+
 src/listener.o: src/listener.cpp.o
 
 .PHONY : src/listener.o
@@ -703,6 +733,60 @@ src/listener.s: src/listener.cpp.s
 src/listener.cpp.s:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/listener.dir/build.make hello/CMakeFiles/listener.dir/src/listener.cpp.s
 .PHONY : src/listener.cpp.s
+
+src/publisher.o: src/publisher.cpp.o
+
+.PHONY : src/publisher.o
+
+# target to build an object file
+src/publisher.cpp.o:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Pub.dir/build.make hello/CMakeFiles/Num_Pub.dir/src/publisher.cpp.o
+.PHONY : src/publisher.cpp.o
+
+src/publisher.i: src/publisher.cpp.i
+
+.PHONY : src/publisher.i
+
+# target to preprocess a source file
+src/publisher.cpp.i:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Pub.dir/build.make hello/CMakeFiles/Num_Pub.dir/src/publisher.cpp.i
+.PHONY : src/publisher.cpp.i
+
+src/publisher.s: src/publisher.cpp.s
+
+.PHONY : src/publisher.s
+
+# target to generate assembly for a file
+src/publisher.cpp.s:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Pub.dir/build.make hello/CMakeFiles/Num_Pub.dir/src/publisher.cpp.s
+.PHONY : src/publisher.cpp.s
+
+src/subscriber.o: src/subscriber.cpp.o
+
+.PHONY : src/subscriber.o
+
+# target to build an object file
+src/subscriber.cpp.o:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Sub.dir/build.make hello/CMakeFiles/Num_Sub.dir/src/subscriber.cpp.o
+.PHONY : src/subscriber.cpp.o
+
+src/subscriber.i: src/subscriber.cpp.i
+
+.PHONY : src/subscriber.i
+
+# target to preprocess a source file
+src/subscriber.cpp.i:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Sub.dir/build.make hello/CMakeFiles/Num_Sub.dir/src/subscriber.cpp.i
+.PHONY : src/subscriber.cpp.i
+
+src/subscriber.s: src/subscriber.cpp.s
+
+.PHONY : src/subscriber.s
+
+# target to generate assembly for a file
+src/subscriber.cpp.s:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/Num_Sub.dir/build.make hello/CMakeFiles/Num_Sub.dir/src/subscriber.cpp.s
+.PHONY : src/subscriber.cpp.s
 
 src/talker.o: src/talker.cpp.o
 
@@ -740,20 +824,20 @@ help:
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... hello_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... hello_generate_messages_nodejs"
-	@echo "... edit_cache"
 	@echo "... hello_geneus"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_nodejs"
@@ -761,7 +845,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install/strip"
 	@echo "... hello_genlisp"
@@ -770,6 +853,8 @@ help:
 	@echo "... _hello_generate_messages_check_deps_Num"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... listener"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... Num_Sub"
 	@echo "... hello_gencpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... hello_generate_messages_lisp"
@@ -778,9 +863,16 @@ help:
 	@echo "... hello_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... hello_genpy"
+	@echo "... Num_Pub"
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"
+	@echo "... src/publisher.o"
+	@echo "... src/publisher.i"
+	@echo "... src/publisher.s"
+	@echo "... src/subscriber.o"
+	@echo "... src/subscriber.i"
+	@echo "... src/subscriber.s"
 	@echo "... src/talker.o"
 	@echo "... src/talker.i"
 	@echo "... src/talker.s"

@@ -6,4 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("hello")
+subdirs("joy_subscribe")
 subdirs("test")
+subdirs("joy_listener")
