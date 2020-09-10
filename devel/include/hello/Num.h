@@ -27,13 +27,11 @@ struct Num_
 
   Num_()
     : first_name()
-    , coordinate()
-    , num(0)  {
+    , coordinate()  {
     }
   Num_(const ContainerAllocator& _alloc)
     : first_name(_alloc)
-    , coordinate(_alloc)
-    , num(0)  {
+    , coordinate(_alloc)  {
   (void)_alloc;
     }
 
@@ -44,9 +42,6 @@ struct Num_
 
    typedef  ::geometry_msgs::Vector3_<ContainerAllocator>  _coordinate_type;
   _coordinate_type coordinate;
-
-   typedef int64_t _num_type;
-  _num_type num;
 
 
 
@@ -78,8 +73,7 @@ template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::hello::Num_<ContainerAllocator1> & lhs, const ::hello::Num_<ContainerAllocator2> & rhs)
 {
   return lhs.first_name == rhs.first_name &&
-    lhs.coordinate == rhs.coordinate &&
-    lhs.num == rhs.num;
+    lhs.coordinate == rhs.coordinate;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -136,12 +130,12 @@ struct MD5Sum< ::hello::Num_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "47f709c3ebbeb15e51c9821690dd7abd";
+    return "f1d7a94780dfd063c66a59a7acca4aa5";
   }
 
   static const char* value(const ::hello::Num_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x47f709c3ebbeb15eULL;
-  static const uint64_t static_value2 = 0x51c9821690dd7abdULL;
+  static const uint64_t static_value1 = 0xf1d7a94780dfd063ULL;
+  static const uint64_t static_value2 = 0xc66a59a7acca4aa5ULL;
 };
 
 template<class ContainerAllocator>
@@ -160,9 +154,10 @@ struct Definition< ::hello::Num_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "std_msgs/String first_name\n"
+    return "# Num.msg\n"
+"\n"
+"std_msgs/String first_name\n"
 "geometry_msgs/Vector3 coordinate\n"
-"int64 num\n"
 "\n"
 "================================================================================\n"
 "MSG: std_msgs/String\n"
@@ -200,7 +195,6 @@ namespace serialization
     {
       stream.next(m.first_name);
       stream.next(m.coordinate);
-      stream.next(m.num);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -225,8 +219,6 @@ struct Printer< ::hello::Num_<ContainerAllocator> >
     s << indent << "coordinate: ";
     s << std::endl;
     Printer< ::geometry_msgs::Vector3_<ContainerAllocator> >::stream(s, indent + "  ", v.coordinate);
-    s << indent << "num: ";
-    Printer<int64_t>::stream(s, indent + "  ", v.num);
   }
 };
 

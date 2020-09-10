@@ -106,9 +106,13 @@ catkin_package(
 
 add_executable(talker src/talker.cpp)
 add_executable(listener src/listener.cpp)
+add_executable(Num_Pub src/publisher.cpp)
+add_executable(Num_Sub src/subscriber.cpp)
 
 target_link_libraries(talker ${catkin_LIBRARIES})
 target_link_libraries(listener ${catkin_LIBRARIES})
+target_link_libraries(Num_Pub ${catkin_LIBRARIES})
+target_link_libraries(Num_Sub ${catkin_LIBRARIES})
 
 
 ###########

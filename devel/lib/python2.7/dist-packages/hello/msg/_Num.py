@@ -9,12 +9,13 @@ import geometry_msgs.msg
 import std_msgs.msg
 
 class Num(genpy.Message):
-  _md5sum = "47f709c3ebbeb15e51c9821690dd7abd"
+  _md5sum = "f1d7a94780dfd063c66a59a7acca4aa5"
   _type = "hello/Num"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """std_msgs/String first_name
+  _full_text = """# Num.msg
+
+std_msgs/String first_name
 geometry_msgs/Vector3 coordinate
-int64 num
 
 ================================================================================
 MSG: std_msgs/String
@@ -32,8 +33,8 @@ MSG: geometry_msgs/Vector3
 float64 x
 float64 y
 float64 z"""
-  __slots__ = ['first_name','coordinate','num']
-  _slot_types = ['std_msgs/String','geometry_msgs/Vector3','int64']
+  __slots__ = ['first_name','coordinate']
+  _slot_types = ['std_msgs/String','geometry_msgs/Vector3']
 
   def __init__(self, *args, **kwds):
     """
@@ -43,7 +44,7 @@ float64 z"""
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       first_name,coordinate,num
+       first_name,coordinate
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -56,12 +57,9 @@ float64 z"""
         self.first_name = std_msgs.msg.String()
       if self.coordinate is None:
         self.coordinate = geometry_msgs.msg.Vector3()
-      if self.num is None:
-        self.num = 0
     else:
       self.first_name = std_msgs.msg.String()
       self.coordinate = geometry_msgs.msg.Vector3()
-      self.num = 0
 
   def _get_types(self):
     """
@@ -82,7 +80,7 @@ float64 z"""
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_3dq().pack(_x.coordinate.x, _x.coordinate.y, _x.coordinate.z, _x.num))
+      buff.write(_get_struct_3d().pack(_x.coordinate.x, _x.coordinate.y, _x.coordinate.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,8 +106,8 @@ float64 z"""
         self.first_name.data = str[start:end]
       _x = self
       start = end
-      end += 32
-      (_x.coordinate.x, _x.coordinate.y, _x.coordinate.z, _x.num,) = _get_struct_3dq().unpack(str[start:end])
+      end += 24
+      (_x.coordinate.x, _x.coordinate.y, _x.coordinate.z,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -129,7 +127,7 @@ float64 z"""
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_3dq().pack(_x.coordinate.x, _x.coordinate.y, _x.coordinate.z, _x.num))
+      buff.write(_get_struct_3d().pack(_x.coordinate.x, _x.coordinate.y, _x.coordinate.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -156,8 +154,8 @@ float64 z"""
         self.first_name.data = str[start:end]
       _x = self
       start = end
-      end += 32
-      (_x.coordinate.x, _x.coordinate.y, _x.coordinate.z, _x.num,) = _get_struct_3dq().unpack(str[start:end])
+      end += 24
+      (_x.coordinate.x, _x.coordinate.y, _x.coordinate.z,) = _get_struct_3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -166,9 +164,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3dq = None
-def _get_struct_3dq():
-    global _struct_3dq
-    if _struct_3dq is None:
-        _struct_3dq = struct.Struct("<3dq")
-    return _struct_3dq
+_struct_3d = None
+def _get_struct_3d():
+    global _struct_3d
+    if _struct_3d is None:
+        _struct_3d = struct.Struct("<3d")
+    return _struct_3d

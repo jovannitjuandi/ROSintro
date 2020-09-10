@@ -22,7 +22,6 @@ class Num {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.first_name = null;
       this.coordinate = null;
-      this.num = null;
     }
     else {
       if (initObj.hasOwnProperty('first_name')) {
@@ -37,12 +36,6 @@ class Num {
       else {
         this.coordinate = new geometry_msgs.msg.Vector3();
       }
-      if (initObj.hasOwnProperty('num')) {
-        this.num = initObj.num
-      }
-      else {
-        this.num = 0;
-      }
     }
   }
 
@@ -52,8 +45,6 @@ class Num {
     bufferOffset = std_msgs.msg.String.serialize(obj.first_name, buffer, bufferOffset);
     // Serialize message field [coordinate]
     bufferOffset = geometry_msgs.msg.Vector3.serialize(obj.coordinate, buffer, bufferOffset);
-    // Serialize message field [num]
-    bufferOffset = _serializer.int64(obj.num, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -65,15 +56,13 @@ class Num {
     data.first_name = std_msgs.msg.String.deserialize(buffer, bufferOffset);
     // Deserialize message field [coordinate]
     data.coordinate = geometry_msgs.msg.Vector3.deserialize(buffer, bufferOffset);
-    // Deserialize message field [num]
-    data.num = _deserializer.int64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.String.getMessageSize(object.first_name);
-    return length + 32;
+    return length + 24;
   }
 
   static datatype() {
@@ -83,15 +72,16 @@ class Num {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '47f709c3ebbeb15e51c9821690dd7abd';
+    return 'f1d7a94780dfd063c66a59a7acca4aa5';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    # Num.msg
+    
     std_msgs/String first_name
     geometry_msgs/Vector3 coordinate
-    int64 num
     
     ================================================================================
     MSG: std_msgs/String
@@ -130,13 +120,6 @@ class Num {
     }
     else {
       resolved.coordinate = new geometry_msgs.msg.Vector3()
-    }
-
-    if (msg.num !== undefined) {
-      resolved.num = msg.num;
-    }
-    else {
-      resolved.num = 0
     }
 
     return resolved;
