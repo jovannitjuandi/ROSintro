@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/home/owr01/practice/devel/include/hello/Num.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/String.h
+-
+geometry_msgs/Vector3.h
+-
+
 /home/owr01/practice/src/hello/src/subscriber.cpp
 ros/ros.h
 /home/owr01/practice/src/hello/src/ros/ros.h
@@ -13,6 +33,22 @@ std_msgs/String.h
 /home/owr01/practice/src/hello/src/std_msgs/String.h
 hello/Num.h
 /home/owr01/practice/src/hello/src/hello/Num.h
+
+/opt/ros/melodic/include/geometry_msgs/Vector3.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
