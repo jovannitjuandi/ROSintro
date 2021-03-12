@@ -285,17 +285,30 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named webvizplot
+# Target rules for targets named posepub
 
 # Build rule for target.
-webvizplot: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 webvizplot
-.PHONY : webvizplot
+posepub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 posepub
+.PHONY : posepub
 
 # fast build rule for target.
-webvizplot/fast:
-	$(MAKE) -f hello/CMakeFiles/webvizplot.dir/build.make hello/CMakeFiles/webvizplot.dir/build
-.PHONY : webvizplot/fast
+posepub/fast:
+	$(MAKE) -f hello/CMakeFiles/posepub.dir/build.make hello/CMakeFiles/posepub.dir/build
+.PHONY : posepub/fast
+
+#=============================================================================
+# Target rules for targets named point
+
+# Build rule for target.
+point: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 point
+.PHONY : point
+
+# fast build rule for target.
+point/fast:
+	$(MAKE) -f hello/CMakeFiles/point.dir/build.make hello/CMakeFiles/point.dir/build
+.PHONY : point/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_py
@@ -904,7 +917,8 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... webvizplot"
+	@echo "... posepub"
+	@echo "... point"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"

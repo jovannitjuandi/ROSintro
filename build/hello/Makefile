@@ -80,16 +80,15 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -102,15 +101,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -168,19 +168,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-hello/CMakeFiles/webvizplot.dir/rule:
-	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/webvizplot.dir/rule
-.PHONY : hello/CMakeFiles/webvizplot.dir/rule
+hello/CMakeFiles/posepub.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/posepub.dir/rule
+.PHONY : hello/CMakeFiles/posepub.dir/rule
 
 # Convenience name for target.
-webvizplot: hello/CMakeFiles/webvizplot.dir/rule
+posepub: hello/CMakeFiles/posepub.dir/rule
 
-.PHONY : webvizplot
+.PHONY : posepub
 
 # fast build rule for target.
-webvizplot/fast:
-	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/webvizplot.dir/build.make hello/CMakeFiles/webvizplot.dir/build
-.PHONY : webvizplot/fast
+posepub/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/posepub.dir/build.make hello/CMakeFiles/posepub.dir/build
+.PHONY : posepub/fast
+
+# Convenience name for target.
+hello/CMakeFiles/point.dir/rule:
+	cd /home/owr01/practice/build && $(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/point.dir/rule
+.PHONY : hello/CMakeFiles/point.dir/rule
+
+# Convenience name for target.
+point: hello/CMakeFiles/point.dir/rule
+
+.PHONY : point
+
+# fast build rule for target.
+point/fast:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/point.dir/build.make hello/CMakeFiles/point.dir/build
+.PHONY : point/fast
 
 # Convenience name for target.
 hello/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
@@ -779,6 +794,33 @@ src/listener.cpp.s:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/listener.dir/build.make hello/CMakeFiles/listener.dir/src/listener.cpp.s
 .PHONY : src/listener.cpp.s
 
+src/point.o: src/point.cpp.o
+
+.PHONY : src/point.o
+
+# target to build an object file
+src/point.cpp.o:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/point.dir/build.make hello/CMakeFiles/point.dir/src/point.cpp.o
+.PHONY : src/point.cpp.o
+
+src/point.i: src/point.cpp.i
+
+.PHONY : src/point.i
+
+# target to preprocess a source file
+src/point.cpp.i:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/point.dir/build.make hello/CMakeFiles/point.dir/src/point.cpp.i
+.PHONY : src/point.cpp.i
+
+src/point.s: src/point.cpp.s
+
+.PHONY : src/point.s
+
+# target to generate assembly for a file
+src/point.cpp.s:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/point.dir/build.make hello/CMakeFiles/point.dir/src/point.cpp.s
+.PHONY : src/point.cpp.s
+
 src/polygon.o: src/polygon.cpp.o
 
 .PHONY : src/polygon.o
@@ -805,6 +847,33 @@ src/polygon.s: src/polygon.cpp.s
 src/polygon.cpp.s:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/polygon.dir/build.make hello/CMakeFiles/polygon.dir/src/polygon.cpp.s
 .PHONY : src/polygon.cpp.s
+
+src/posepub.o: src/posepub.cpp.o
+
+.PHONY : src/posepub.o
+
+# target to build an object file
+src/posepub.cpp.o:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/posepub.dir/build.make hello/CMakeFiles/posepub.dir/src/posepub.cpp.o
+.PHONY : src/posepub.cpp.o
+
+src/posepub.i: src/posepub.cpp.i
+
+.PHONY : src/posepub.i
+
+# target to preprocess a source file
+src/posepub.cpp.i:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/posepub.dir/build.make hello/CMakeFiles/posepub.dir/src/posepub.cpp.i
+.PHONY : src/posepub.cpp.i
+
+src/posepub.s: src/posepub.cpp.s
+
+.PHONY : src/posepub.s
+
+# target to generate assembly for a file
+src/posepub.cpp.s:
+	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/posepub.dir/build.make hello/CMakeFiles/posepub.dir/src/posepub.cpp.s
+.PHONY : src/posepub.cpp.s
 
 src/publisher.o: src/publisher.cpp.o
 
@@ -887,33 +956,6 @@ src/talker.cpp.s:
 	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/talker.dir/build.make hello/CMakeFiles/talker.dir/src/talker.cpp.s
 .PHONY : src/talker.cpp.s
 
-src/webvizplot.o: src/webvizplot.cpp.o
-
-.PHONY : src/webvizplot.o
-
-# target to build an object file
-src/webvizplot.cpp.o:
-	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/webvizplot.dir/build.make hello/CMakeFiles/webvizplot.dir/src/webvizplot.cpp.o
-.PHONY : src/webvizplot.cpp.o
-
-src/webvizplot.i: src/webvizplot.cpp.i
-
-.PHONY : src/webvizplot.i
-
-# target to preprocess a source file
-src/webvizplot.cpp.i:
-	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/webvizplot.dir/build.make hello/CMakeFiles/webvizplot.dir/src/webvizplot.cpp.i
-.PHONY : src/webvizplot.cpp.i
-
-src/webvizplot.s: src/webvizplot.cpp.s
-
-.PHONY : src/webvizplot.s
-
-# target to generate assembly for a file
-src/webvizplot.cpp.s:
-	cd /home/owr01/practice/build && $(MAKE) -f hello/CMakeFiles/webvizplot.dir/build.make hello/CMakeFiles/webvizplot.dir/src/webvizplot.cpp.s
-.PHONY : src/webvizplot.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -922,10 +964,11 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... list_install_components"
-	@echo "... webvizplot"
+	@echo "... test"
+	@echo "... edit_cache"
+	@echo "... posepub"
+	@echo "... point"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
@@ -969,9 +1012,15 @@ help:
 	@echo "... src/listener.o"
 	@echo "... src/listener.i"
 	@echo "... src/listener.s"
+	@echo "... src/point.o"
+	@echo "... src/point.i"
+	@echo "... src/point.s"
 	@echo "... src/polygon.o"
 	@echo "... src/polygon.i"
 	@echo "... src/polygon.s"
+	@echo "... src/posepub.o"
+	@echo "... src/posepub.i"
+	@echo "... src/posepub.s"
 	@echo "... src/publisher.o"
 	@echo "... src/publisher.i"
 	@echo "... src/publisher.s"
@@ -981,9 +1030,6 @@ help:
 	@echo "... src/talker.o"
 	@echo "... src/talker.i"
 	@echo "... src/talker.s"
-	@echo "... src/webvizplot.o"
-	@echo "... src/webvizplot.i"
-	@echo "... src/webvizplot.s"
 .PHONY : help
 
 

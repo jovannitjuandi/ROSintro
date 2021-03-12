@@ -37,10 +37,11 @@
 /home/owr01/practice/build/gtest/googlemock/gtest/CMakeFiles/rebuild_cache.dir
 /home/owr01/practice/build/hello/CMakeFiles/install/local.dir
 /home/owr01/practice/build/hello/CMakeFiles/install.dir
-/home/owr01/practice/build/hello/CMakeFiles/edit_cache.dir
-/home/owr01/practice/build/hello/CMakeFiles/test.dir
 /home/owr01/practice/build/hello/CMakeFiles/list_install_components.dir
-/home/owr01/practice/build/hello/CMakeFiles/webvizplot.dir
+/home/owr01/practice/build/hello/CMakeFiles/test.dir
+/home/owr01/practice/build/hello/CMakeFiles/edit_cache.dir
+/home/owr01/practice/build/hello/CMakeFiles/posepub.dir
+/home/owr01/practice/build/hello/CMakeFiles/point.dir
 /home/owr01/practice/build/hello/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/owr01/practice/build/hello/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/owr01/practice/build/hello/CMakeFiles/std_msgs_generate_messages_eus.dir
