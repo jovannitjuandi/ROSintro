@@ -50,6 +50,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate messages in the 'msg' folder
 add_message_files(DIRECTORY msg FILES Num.msg)
+add_message_files(DIRECTORY msg FILES TwoDimensional.msg)
 
 ## Generate services in the 'srv' folder
 #add_service_files(DIRECTORY srv FILES AddTwoInts.srv)
@@ -69,7 +70,7 @@ generate_messages(DEPENDENCIES std_msgs geometry_msgs)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES hello
-   CATKIN_DEPENDS message_runtime roscpp rospy std_msgs geometry_msgs
+   CATKIN_DEPENDS message_runtime roscpp rospy std_msgs geometry_msgs webviz_msgs
 #  DEPENDS system_lib
 )
 
@@ -108,11 +109,15 @@ add_executable(talker src/talker.cpp)
 add_executable(listener src/listener.cpp)
 add_executable(Num_Pub src/publisher.cpp)
 add_executable(Num_Sub src/subscriber.cpp)
+add_executable(polygon src/polygon.cpp)
+add_executable(webvizplot src/webvizplot.cpp)
 
 target_link_libraries(talker ${catkin_LIBRARIES})
 target_link_libraries(listener ${catkin_LIBRARIES})
 target_link_libraries(Num_Pub ${catkin_LIBRARIES})
 target_link_libraries(Num_Sub ${catkin_LIBRARIES})
+target_link_libraries(polygon ${catkin_LIBRARIES})
+target_link_libraries(webvizplot ${catkin_LIBRARIES})
 
 
 ###########

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hello_generate_messages_eus"
+  "/home/owr01/practice/devel/share/roseus/ros/hello/msg/TwoDimensional.l"
   "/home/owr01/practice/devel/share/roseus/ros/hello/msg/Num.l"
   "/home/owr01/practice/devel/share/roseus/ros/hello/manifest.l"
 )

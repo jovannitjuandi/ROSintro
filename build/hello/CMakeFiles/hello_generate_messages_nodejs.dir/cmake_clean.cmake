@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hello_generate_messages_nodejs"
+  "/home/owr01/practice/devel/share/gennodejs/ros/hello/msg/TwoDimensional.js"
   "/home/owr01/practice/devel/share/gennodejs/ros/hello/msg/Num.js"
 )
 

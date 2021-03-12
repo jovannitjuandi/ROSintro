@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/owr01/practice/src/hello/msg/Num.msg"
+messages_str = "/home/owr01/practice/src/hello/msg/Num.msg;/home/owr01/practice/src/hello/msg/TwoDimensional.msg"
 services_str = ""
 pkg_name = "hello"
 dependencies_str = "std_msgs;geometry_msgs"

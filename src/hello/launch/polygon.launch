@@ -1,0 +1,3 @@
+<launch>
+	<node name="polygon" pkg="hello" type="polygon" output="screen"/>
+</launch>

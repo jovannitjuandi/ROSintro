@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hello_generate_messages_lisp"
+  "/home/owr01/practice/devel/share/common-lisp/ros/hello/msg/TwoDimensional.lisp"
   "/home/owr01/practice/devel/share/common-lisp/ros/hello/msg/Num.lisp"
 )
 

@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/owr01/practice/build"
+export PWD='/home/owr01/practice/build'
