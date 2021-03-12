@@ -110,14 +110,18 @@ add_executable(listener src/listener.cpp)
 add_executable(Num_Pub src/publisher.cpp)
 add_executable(Num_Sub src/subscriber.cpp)
 add_executable(polygon src/polygon.cpp)
-add_executable(webvizplot src/webvizplot.cpp)
+#add_executable(webvizplot src/webvizplot.cpp)
+add_executable(point src/point.cpp)
+add_executable(posepub src/posepub.cpp)
 
 target_link_libraries(talker ${catkin_LIBRARIES})
 target_link_libraries(listener ${catkin_LIBRARIES})
 target_link_libraries(Num_Pub ${catkin_LIBRARIES})
 target_link_libraries(Num_Sub ${catkin_LIBRARIES})
 target_link_libraries(polygon ${catkin_LIBRARIES})
-target_link_libraries(webvizplot ${catkin_LIBRARIES})
+#target_link_libraries(webvizplot ${catkin_LIBRARIES})
+target_link_libraries(point ${catkin_LIBRARIES})
+target_link_libraries(posepub ${catkin_LIBRARIES})
 
 
 ###########

@@ -1,3 +1,4 @@
 <launch>
 	<node name="polygon" pkg="hello" type="polygon" output="screen"/>
+	<node name="point" pkg="hello" type="point" output="screen"/>
 </launch>

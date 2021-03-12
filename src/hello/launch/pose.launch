@@ -1,0 +1,3 @@
+<launch>
+	<node name="posepub" pkg="hello" type="posepub" output="screen"/>
+</launch>
